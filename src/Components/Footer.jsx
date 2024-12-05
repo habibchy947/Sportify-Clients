@@ -55,6 +55,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className='text-center text-gray-100 pt-3'>
+                <div className='divider '></div>
+                <p className='text-white'>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+            </div>
         </div>
     );
 };

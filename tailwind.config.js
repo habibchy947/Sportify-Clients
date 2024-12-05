@@ -10,6 +10,7 @@ export default {
         bannerImg: "url('/src/assets/sportify-banner.avif')",
         bannerImg2: "url('/src/assets/bannerImg2.avif')",
         bannerImg3: "url('/src/assets/banerImg3.avif')",
+        loginImg: "url('/src/assets/login.webp')",
       }
     },
   },
