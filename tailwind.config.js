@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        bannerImg: "url('/src/assets/sportify-banner.avif')",
+        bannerImg2: "url('/src/assets/bannerImg2.avif')",
+        bannerImg3: "url('/src/assets/banerImg3.avif')",
+      }
+    },
   },
   plugins: [
     require('daisyui'),
