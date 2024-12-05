@@ -4,52 +4,54 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
+import auth from '../Firebase/firebase-init';
 
 const Register = () => {
-    const {createUser,updateUser,setUser,googleSignIn} = useContext(AuthContext)
+    const { createUser, setUser, googleSignIn } = useContext(AuthContext)
     const [eye, setEye] = useState(false)
     const navigate = useNavigate()
     const handleGoogle = (e) => {
         e.preventDefault()
         googleSignIn()
-        .then(() => {
-            toast.success('you are logged in')
-            navigate('/')
-        })
+            .then(() => {
+                toast.success('you are logged in')
+                navigate('/')
+            })
     }
-    const handleSignUp=(e)=>{
+    const handleSignUp = (e) => {
         e.preventDefault()
         const form = e.target
         const name = form.name.value
-        const email = form.email.value 
-        const photo = form.photo.value 
-        const password = form.password.value 
+        const email = form.email.value
+        const photo = form.photo.value
+        const password = form.password.value
 
-        if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
+        if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
             toast.error('Your password must have a lowerCase , an upperCase letter and at least 6 character')
             return
         }
-
-        createUser(email,password)
-        .then(result =>{
-            console.log(result.user)
-            setUser(result.user)
-            toast.success('your account has been created')
-            updateUser({
-                displayName:name,
-                photoURL:photo
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                setUser(result.user)
+                toast.success('your account has been created')
+                updateProfile(auth.currentUser, profile)
+                    .then(() => {
+                        navigate("/")
+                        e.target.reset()
+                    })
+                    .catch(error => {
+                        toast.error(error)
+                    })
             })
-            .then(() =>{
-                navigate("/")
-                e.target.reset()
+            .catch(() => {
+                toast.error("your email or password is not valid")
             })
-            .catch(error => {
-                toast.error(error)
-            })
-        })
-        .catch(() => {
-            toast.error("your email or password is not valid")
-        })
     }
     return (
         <div className="bg-loginImg bg-no-repeat bg-cover flex items-center justify-center py-10">
@@ -84,10 +86,10 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Password</span>
                         </label>
-                        <input type={eye ? 'text':'password'} name='password' placeholder="password" className="input  input-bordered" required />
+                        <input type={eye ? 'text' : 'password'} name='password' placeholder="password" className="input  input-bordered" required />
                         <span onClick={() => setEye(!eye)} className='absolute right-4 bottom-4 text-lg'>
                             {
-                                eye ? <FaEyeSlash/> : <FaEye/>
+                                eye ? <FaEyeSlash /> : <FaEye />
                             }
                         </span>
                     </div>

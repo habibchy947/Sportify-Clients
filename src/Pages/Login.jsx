@@ -4,18 +4,19 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [eye, setEye] = useState(false)
     const {setUser,googleSignIn,signInUser} = useContext(AuthContext)
+    const location = useLocation()
     const navigate = useNavigate()
     const handleGoogleLogin = (e) => {
         e.preventDefault()
         googleSignIn()
         .then(() => {
             toast.success('you are logged in')
-            navigate('/')
+            navigate(location?.state? location.state : "/")
         })
         .catch((error)=>{
             toast.error(error)
@@ -28,11 +29,10 @@ const Login = () => {
         const password = form.password.value 
         signInUser(email,password)
         .then(result => {
-            console.log(result.user)
             setUser(result.user)
             toast.success('you are logged in')
             e.target.reset()
-            navigate('/')
+            navigate(location?.state? location.state : "/")
         })
         .catch(err => {
             console.log(err)
