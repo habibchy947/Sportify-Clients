@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const MainLayout = () => {
     return (
@@ -10,6 +11,7 @@ const MainLayout = () => {
             </header>
             {/* dynamic content */}
             {/* footer */}
+            <Footer></Footer>
         </div>
     );
 };
