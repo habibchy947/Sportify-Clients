@@ -1,10 +1,13 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const MainLayout = () => {
     return (
         <div>
             {/* navbar */}
-            fdg
+            <header className='shadow-lg py-2'>
+                <Navbar></Navbar>
+            </header>
             {/* dynamic content */}
             {/* footer */}
         </div>
