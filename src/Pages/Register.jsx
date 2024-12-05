@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
     const [eye, setEye] = useState(false)
+
     const handleSignIn=(e)=>{
         e.preventDefault()
         const form = e.target
@@ -14,12 +17,21 @@ const Register = () => {
         const password = form.password.value 
         const user = {name,email,password,photo}
         console.log(user)
+
         if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
             toast.error('Your password must have a lowerCase , an upperCase letter and at least 6 character')
             return
         }else{
             toast.success('your account has been created')
         }
+
+        createUser(email,password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
     return (
         <div className="bg-loginImg bg-no-repeat bg-cover flex items-center justify-center py-10">

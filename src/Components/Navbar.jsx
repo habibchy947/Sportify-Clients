@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -10,11 +10,12 @@ const Navbar = () => {
             <NavLink to='/myEquipment' className={({isActive})=> `px-4 font-medium text-lg ${isActive ? 'text-warning' :""}`}>My equipment list</NavLink>
 
         </>
+        const [toggle,setToggle] = useState(false)
     return (
         <div className="navbar bg-white px-0 w-10/12 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div onClick={()=>setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -30,7 +31,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className={`menu ${toggle && 'hidden'} menu-sm dropdown-content  bg-white rounded-box z-[20] mt-3 w-52 p-2 shadow`}>
                             {links}
                     </ul>
                 </div>
