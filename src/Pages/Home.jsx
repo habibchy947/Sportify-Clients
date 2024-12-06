@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
 import OurProduct from '../Components/OurProduct';
+import { useLoaderData } from 'react-router-dom';
+import Categories from '../Components/Categories';
 
 const Home = () => {
+    const products = useLoaderData()
     const [theme,setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
     const handleTheme = (e) =>{
         if(e.target.checked) {
@@ -57,7 +60,10 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <section>
-                <OurProduct></OurProduct>
+                <OurProduct products={products}></OurProduct>
+            </section>
+            <section className='w-10/12 mx-auto'>
+                <Categories></Categories>
             </section>
         </div>
     );

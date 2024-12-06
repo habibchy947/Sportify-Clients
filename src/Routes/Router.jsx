@@ -8,7 +8,7 @@ import MyEquipment from '../Pages/MyEquipment';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import PrivateRoute from '../Components/PrivateRoute';
-import ProductCards from '../Components/ProductCards';
+import ProductCards from '../Components/ProductCard';
 
 const router = createBrowserRouter([
     {
@@ -19,12 +19,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                children: [
-                    {
-                        path:'/',
-                        element:<ProductCards></ProductCards>
-                    }
-                ]
+                loader:()=>fetch("http://localhost:5000/sliceEquipment")
             },
             {
                 path:'/allSportsEquipment',
