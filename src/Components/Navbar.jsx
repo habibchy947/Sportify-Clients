@@ -15,7 +15,7 @@ const Navbar = () => {
         </>
     const [toggle, setToggle] = useState(false)
     return (
-        <div className="navbar bg-white px-0 w-10/12 mx-auto">
+        <div className="navbar bg-white px-0 w-11/12 md:w-10/12 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

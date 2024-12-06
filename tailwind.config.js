@@ -11,6 +11,7 @@ export default {
         bannerImg2: "url('/src/assets/bannerImg2.avif')",
         bannerImg3: "url('/src/assets/banerImg3.avif')",
         loginImg: "url('/src/assets/login.webp')",
+        addEquipmentBg: "url('/src/assets/sportsEquipment.jpg')",
       }
     },
   },
