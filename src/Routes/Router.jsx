@@ -8,6 +8,7 @@ import MyEquipment from '../Pages/MyEquipment';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import PrivateRoute from '../Components/PrivateRoute';
+import ProductCards from '../Components/ProductCards';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,13 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                children: [
+                    {
+                        path:'/',
+                        element:<ProductCards></ProductCards>
+                    }
+                ]
             },
             {
                 path:'/allSportsEquipment',

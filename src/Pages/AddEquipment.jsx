@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { MdOutlineStarOutline, MdOutlineStarPurple500 } from 'react-icons/md';
 import Rating from 'react-rating';
 import { AuthContext } from '../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const AddEquipment = () => {
     const { user } = useContext(AuthContext)
@@ -23,7 +24,7 @@ const AddEquipment = () => {
         const photo = form.photo.value
         const userName = form.userName.value
         const email = form.email.value
-        const newUser = {
+        const newEquipment = {
             itemName,
             category,
             price,
@@ -36,7 +37,28 @@ const AddEquipment = () => {
             userName,
             email
         }
-        console.log(newUser)
+        console.log(newEquipment)
+        fetch("http://localhost:5000/equipments", {
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newEquipment)
+        })
+        .then(res => res.json())
+        .then(data => {
+            e.target.reset()
+            setRating(0)
+            toast.success('equipment added')
+            console.log(data)
+        })
+        // fetch(`http://localhost:5000/equipments/${email}`, {
+        //     method:"GET",
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        // })
     }
     return (
         <>
@@ -57,13 +79,13 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">Item name</span>
                             </div>
-                            <input name='name' type="text" placeholder="Item name" className="input input-bordered w-full" />
+                            <input name='name' type="text" placeholder="Item name" required className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-semibold">Category</span>
                             </div>
-                            <input name='category' type="text" placeholder="Category name" className="input input-bordered w-full" />
+                            <input name='category' type="text" placeholder="Category name" required className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-2 */}
@@ -72,7 +94,7 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">Price</span>
                             </div>
-                            <input name='price' type="number" placeholder="item price" className="input input-bordered w-full" />
+                            <input name='price' type="number" placeholder="item price" required className="input input-bordered w-full" />
                         </label>
                         <label className="w-full">
                             <div className="label">
@@ -80,6 +102,7 @@ const AddEquipment = () => {
                             </div>
                             <Rating
                                 className='text-2xl'
+                                required
                                 initialRating={rating}
                                 emptySymbol={<MdOutlineStarOutline />}
                                 fullSymbol={<MdOutlineStarPurple500 className='text-yellow-400' />}
@@ -94,13 +117,13 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">Description</span>
                             </div>
-                            <input name='description' type="text" placeholder="description" className="input input-bordered w-full" />
+                            <input name='description' type="text" required placeholder="description" className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-semibold">Customization</span>
                             </div>
-                            <input name='customization' type="text" placeholder="customization" className="input input-bordered w-full" />
+                            <input name='customization' type="text" required placeholder="customization" className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-4 */}
@@ -109,13 +132,13 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">Processing Time</span>
                             </div>
-                            <input name='processing' type="text" placeholder="Processing Time" className="input input-bordered w-full" />
+                            <input name='processing' type="text" required placeholder="Processing Time" className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-semibold">Stock</span>
                             </div>
-                            <input name='stock' type="text" placeholder="stock status" className="input input-bordered w-full" />
+                            <input name='stock' type="text" required placeholder="stock status" className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-5 */}
@@ -124,7 +147,7 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">Photo URL</span>
                             </div>
-                            <input name='photo' type="text" placeholder="item photo URL" className="input input-bordered w-full" />
+                            <input name='photo' type="text" required placeholder="item photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-6 */}
@@ -133,13 +156,13 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">User Name</span>
                             </div>
-                            <input name='userName' type="text" placeholder="write your name" value={user?.displayName} className="input input-bordered w-full" />
+                            <input name='userName' type="text"  placeholder="write your name" value={user?.displayName} className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </div>
-                            <input name='email' type="text" placeholder="write your email" value={user?.email} className="input input-bordered w-full" />
+                            <input name='email' type="text"  placeholder="write your email" value={user?.email} className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-7 */}

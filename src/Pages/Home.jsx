@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
+import OurProduct from '../Components/OurProduct';
 
 const Home = () => {
     const [theme,setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -55,6 +56,9 @@ const Home = () => {
                 </label>
             </div>
             <Banner></Banner>
+            <section>
+                <OurProduct></OurProduct>
+            </section>
         </div>
     );
 };
