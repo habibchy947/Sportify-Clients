@@ -52,13 +52,7 @@ const AddEquipment = () => {
             toast.success('equipment added')
             console.log(data)
         })
-        // fetch(`http://localhost:5000/equipments/${email}`, {
-        //     method:"GET",
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data)
-        // })
+       
     }
     return (
         <>
