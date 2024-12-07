@@ -9,6 +9,7 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import PrivateRoute from '../Components/PrivateRoute';
 import ProductDetails from '../Pages/ProductDetails';
+import UpdateEquipment from '../Pages/UpdateEquipment';
 
 const router = createBrowserRouter([
     {
@@ -37,7 +38,13 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myEquipment',
-                element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>
+                element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
+                loader:()=>fetch('http://localhost:5000/equipments')
+            },
+            {
+                path:'/updateEquipment/:id',
+                element:<PrivateRoute><UpdateEquipment/></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
             },
             {
                 path:'/login',

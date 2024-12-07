@@ -13,6 +13,7 @@ export default {
         loginImg: "url('/src/assets/login.webp')",
         addEquipmentBg: "url('/src/assets/sportsEquipment.jpg')",
         allSportEquipmentBg: "url('/src/assets/allSportsEquipmentBg.jpg')",
+        UpdateEquipmentBg: "url('/src/assets/UpdateEquipment.jpg')",
       }
     },
   },

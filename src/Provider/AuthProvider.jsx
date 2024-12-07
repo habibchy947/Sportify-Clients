@@ -3,6 +3,20 @@ import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/firebase-init';
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
+    // theme
+    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+    const handleTheme = (e) => {
+        if (e.target.checked) {
+            setTheme("dark")
+        } else {
+            setTheme("light")
+        }
+    }
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme")
+        document.querySelector("html").setAttribute("data-theme", localTheme)
+    }, [theme])
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const provider = new GoogleAuthProvider()
@@ -44,6 +58,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         loading,
         setLoading,
+        handleTheme,
+        theme
     }
     return (
         <AuthContext.Provider value={authInfo}>
