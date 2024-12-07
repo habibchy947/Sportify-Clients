@@ -1,9 +1,20 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Table from '../Components/Table';
 const AllSportsEquipment = () => {
-    const allEquipments = useLoaderData()
-
+    
+    const [equipments,setEquipments] = useState([])
+    const [sortOrder, setSortOrder] = useState('asc')
+    const fetchEquipment = () => {
+        fetch(`http://localhost:5000/equipments?sort=${sortOrder}`)
+        .then(res => res.json())
+        .then(data => setEquipments(data))
+    }
+    const handleSort = () => {
+        setSortOrder((prev)=> (prev === 'asc' ? 'desc' : 'asc'))
+    }
+    useEffect(()=>{
+        fetchEquipment()
+    },[sortOrder])
     return (
         <>
             <div className='bg-allSportEquipmentBg bg-no-repeat bg-cover bg-center bg-[#494242cc] bg-blend-overlay'>
@@ -14,6 +25,9 @@ const AllSportsEquipment = () => {
             </div>
             <div className=' w-11/12 md:w-10/12 mx-auto py-20'>
             <h2 className='text-4xl text-center font-semibold pb-7'>All Equipments</h2>
+            <div className='flex justify-end mb-4'>
+                <button onClick={handleSort} className='bg-amber-500 btn text-white'>Sort By Price</button>
+            </div>
                 <div className="overflow-x-auto shadow-md">
                     <table className="table">
                         {/* head */}
@@ -30,7 +44,7 @@ const AllSportsEquipment = () => {
                         <tbody>
                             {/* row 1 */}
                             {
-                                allEquipments.length ? allEquipments.map((equipment, idx) => <Table equipment={equipment} idx={idx} key={idx}></Table>): <p className='text-2xl text-red-500'>No Data Found</p>
+                                equipments.length ? equipments.map((equipment, idx) => <Table equipment={equipment} idx={idx} key={idx}></Table>): <p className='text-2xl text-red-500'>No Data Found</p>
                             }
                         </tbody>
                     </table>

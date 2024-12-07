@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='bg-zinc-500 py-12'>
             <div className='grid grid-cols-1 md:grid-cols-4 w-10/12 mx-auto gap-8 overflow-hidden'>
                 <div className='space-y-3'>
-                    <Link className="text-3xl font-bold">
+                    <Link className="text-5xl font-bold">
                         <span className='text-amber-500'>Sport</span>
                         <span className='text-white'>ify</span>
                     </Link>

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Zoom } from 'react-awesome-reveal';
 import { MdOutlineStarOutline, MdOutlineStarPurple500 } from 'react-icons/md';
 import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const ProductDetails = () => {
     const data = useLoaderData()
+    const {theme} = useContext(AuthContext)
     const { itemName, category, photo, customization, processing, description, mainRating, price, stock } = data || {}
     return (
-        <div className='bg-slate-50 py-5'>
+        <div className={`${theme === 'dark' ? 'bg-neutral':'bg-slate-50'} py-5`}>
             <div className='w-10/12 md:w-9/12 bg-base-100 mx-auto p-5 grid grid-cols-1 md:grid-cols-2 items-center shadow-md'>
                 <div className='flex justify-center'>
                     <Zoom>

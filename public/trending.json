@@ -1,0 +1,35 @@
+[
+    {
+        "image": "https://i.ibb.co.com/RphWHL8/baseball-Bats.jpg",
+        "itemName": "Baseball Bats",
+        "category": "Baseball",
+        "description": "High-quality baseball bats suitable for professional matches.",
+        "price": 19.99,
+        "mainRating": 4.6,
+        "customization": "Branding options",
+        "processing": "2-4 business days",
+        "stock": "15"
+    },
+    {
+        "image": "https://i.ibb.co.com/z5qj0zH/golfBags.jpg",
+        "itemName": "Golf Bags",
+        "category": "Golf",
+        "description": "High-quality and waterproof professional bags.",
+        "price": 29.99,
+        "mainRating": 4.8,
+        "customization": "Color options",
+        "processing": "3-5 business days",
+        "stock": "23"
+    },
+    {
+        "image": "https://i.ibb.co.com/cQJVG4d/archerybows.jpg",
+        "itemName": "Archery bows",
+        "category": "Archery",
+        "description": "Lightweight bows with superior grip  for durability.",
+        "price": 30.99,
+        "mainRating": 4.3,
+        "customization": "Custom Grip",
+        "processing": "3-6 business days",
+        "stock": "19"
+    }
+]

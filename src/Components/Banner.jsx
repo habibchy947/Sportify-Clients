@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -6,7 +6,9 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Fade } from "react-awesome-reveal";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 const Banner = () => {
+    const {theme} = useContext(AuthContext)
     return (
         <>
             <Swiper
@@ -32,7 +34,7 @@ const Banner = () => {
                             <p className='text-white mt-3 font-semibold'>Your ultimate destination for top-quality sports gear and apparel.
                                 Shop now to elevate your performance and achieve your goals!</p>
                             <div className='space-x-3 mt-5'>
-                                <button className='btn rounded-sm text-black border-none'>Read More</button>
+                                <button className={`btn rounded-sm ${theme === 'dark'? 'text-white' : 'text-black'}  border-none`}>Read More</button>
                                 <button className='btn rounded-sm bg-amber-500 border-none text-white'><Link to='/addEquipment'>Add Equipment</Link></button>
                             </div>
                         </Fade>

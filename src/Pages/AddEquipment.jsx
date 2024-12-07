@@ -15,7 +15,7 @@ const AddEquipment = () => {
         const form = e.target
         const itemName = form.name.value
         const category = form.category.value
-        const price = form.price.value
+        const price = parseInt(form.price.value)
         const mainRating = rating
         const description = form.description.value
         const customization = form.customization.value

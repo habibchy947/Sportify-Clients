@@ -35,12 +35,12 @@ const Card = ({ product ,myEquipment, setMyEquipment}) => {
         });
     }
     return (
-        <div className="card bg-base-100  shadow-xl rounded-none">
-            <figure className="px-0 py-0 p-2">
+        <div className="card bg-base-100 shadow-xl rounded-none">
+            <figure className="px-0 py-0 w-full p-2">
                 <img
                     src={photo}
                     alt={itemName}
-                    className="object-cover h-80" />
+                    className="object-cover w-full h-80" />
             </figure>
             <div className="card-body p-4 ">
                 <h2 className="card-title font-semibold text-2xl">{itemName}</h2>

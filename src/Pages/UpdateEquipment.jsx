@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 const UpdateEquipment = () => {
     const data = useLoaderData()
     console.log(data)
-    const { user } = useContext(AuthContext)
+    const { user ,theme} = useContext(AuthContext)
     const [rating, setRating] = useState(0)
     const handleRatingChange = (value) => {
         setRating(value)
@@ -63,7 +63,7 @@ const UpdateEquipment = () => {
                     <h2 className='text-5xl md:text-6xl text-white leading-tight font-bold'>Update Equipment</h2>
                 </div>
             </div>
-            <div className='my-5 w-10/12 md:w-9/12 mx-auto shadow-2xl rounded-md p-7 md:px-16 pt-5'>
+            <div className={`${theme === 'dark' ? 'bg-neutral':'bg-slate-50'} my-5 w-10/12 md:w-9/12 mx-auto  shadow-2xl rounded-md p-7 md:px-16 pt-5`}>
                 <form onSubmit={handleUpdateEquipment}>
                     {/* row-1 */}
                     <div className='md:flex gap-5'>

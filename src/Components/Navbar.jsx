@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { IoPersonCircle } from "react-icons/io5";
@@ -16,7 +16,7 @@ const Navbar = () => {
     
     const [toggle, setToggle] = useState(false)
     return (
-        <div className="navbar bg-white px-0 w-11/12 md:w-10/12 mx-auto">
+        <div className="navbar px-0 w-11/12 md:w-10/12 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,7 +39,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link className="text-3xl font-bold"><span className='text-amber-500'>Sport</span>ify</Link>
+                <Link className="text-4xl font-bold"><span className='text-amber-500'>Sport</span>ify</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -92,6 +92,7 @@ const Navbar = () => {
                             <span><button onClick={logOut} className='btn bg-neutral text-white'>Logout</button></span>
                             <ReactTooltip
                                 id="tooltipName"
+                                className='z-20'
                                 place="bottom"
                                 variant="info"
                                 content={user?.displayName}
