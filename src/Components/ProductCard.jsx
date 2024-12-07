@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
-    const { category, itemName, mainRating, photo, price, description } = product || {}
+    const { category, itemName, mainRating, photo, price, description, _id } = product || {}
     return (
         <div className="card bg-base-100  shadow-xl rounded-none">
             <figure className="px-0 py-0 p-2">
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
                 </div>
                 <p className='font-medium text-gray-400'>{description}</p>
                 <div className="card-actions py-1">
-                    <Link><button className="btn text-white rounded-md  bg-amber-500">View Details</button></Link>
+                    <Link to={`/productDetails/${_id}`}><button className="btn text-white rounded-md  bg-amber-500">View Details</button></Link>
                 </div>
             </div>
         </div>
