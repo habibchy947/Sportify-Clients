@@ -2,7 +2,7 @@ import React from 'react';
 import faqs from '../assets/faqs.webp'
 const FAQs = () => {
     return (
-        <div className='w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 py-10 gap-10'>
+        <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 py-12 gap-10'>
             <div className='space-y-2'>
                 <p className='text-amber-500 font-semibold'>Equipments Related Queries</p>
                 <h2 className='text-3xl font-semibold'>Equipments and services</h2>

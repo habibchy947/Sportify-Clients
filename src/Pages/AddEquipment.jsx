@@ -64,7 +64,7 @@ const AddEquipment = () => {
                         tracking and availability for your store.</p>
                 </div>
             </div>
-            <div className='my-5 w-10/12 md:w-9/12 mx-auto shadow-2xl rounded-md p-16'>
+            <div className='my-5 w-10/12 md:w-9/12 mx-auto shadow-2xl rounded-md p-7 md:p-16'>
                 <h2 className='text-3xl text-amber-500 font-bold text-center mb-5'>Add equipment</h2>
                 <form onSubmit={handleAddEquipment}>
                     {/* row-1 */}
