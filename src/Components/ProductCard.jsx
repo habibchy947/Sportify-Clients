@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
             <div className="card-body p-4 ">
                 <h2 className="card-title font-semibold text-2xl">{itemName}</h2>
                 <div className='flex flex-wrap justify-between items-center'>
-                    <p><span className='text-lg font-semibold'>Price : </span><span>{price}</span></p>
+                    <p><span className='text-lg font-semibold'>Price : </span><span>{price}$</span></p>
                     <p className='flex gap-1 items-center justify-end'> <span className='text-lg font-semibold'>Rating :</span>
                         <Rating
                             className='text-xl'
