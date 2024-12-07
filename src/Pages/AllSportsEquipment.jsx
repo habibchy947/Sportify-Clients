@@ -5,7 +5,7 @@ const AllSportsEquipment = () => {
     const [equipments,setEquipments] = useState([])
     const [sortOrder, setSortOrder] = useState('asc')
     const fetchEquipment = () => {
-        fetch(`http://localhost:5000/equipments?sort=${sortOrder}`)
+        fetch(`https://sportify-server-mu.vercel.app/equipments?sort=${sortOrder}`)
         .then(res => res.json())
         .then(data => setEquipments(data))
     }

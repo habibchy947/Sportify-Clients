@@ -6,7 +6,7 @@ const MyEquipment = () => {
     const {user,theme} = useContext(AuthContext)
     const [myEquipment, setMyEquipment] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/equipments/email/${user?.email}`)
+        fetch(`https://sportify-server-mu.vercel.app/equipments/email/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setMyEquipment(data)

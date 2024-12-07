@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Categories = () => {
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/equipments")
+        fetch("https://sportify-server-mu.vercel.app/equipments")
             .then(res => res.json())
             .then(data => {
                 const category = [...new Set(data.map(cate => cate.category))]

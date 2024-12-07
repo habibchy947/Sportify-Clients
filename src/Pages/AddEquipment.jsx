@@ -37,7 +37,7 @@ const AddEquipment = () => {
             userName,
             email
         }
-        fetch("http://localhost:5000/equipments", {
+        fetch("https://sportify-server-mu.vercel.app/equipments", {
             method:"POST",
             headers:{
                 'content-type':'application/json'

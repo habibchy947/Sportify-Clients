@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch("http://localhost:5000/sliceEquipment")
+                loader:()=>fetch("https://sportify-server-mu.vercel.app/sliceEquipment")
             },
             {
                 path:'/allSportsEquipment',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path:'/productDetails/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
+                loader:({params})=>fetch(`https://sportify-server-mu.vercel.app/equipments/${params.id}`)
             },
             {
                 path:'/addEquipment',
@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             {
                 path:'/myEquipment',
                 element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/equipments')
+                loader:()=>fetch('https://sportify-server-mu.vercel.app/equipments')
             },
             {
                 path:'/updateEquipment/:id',
                 element:<PrivateRoute><UpdateEquipment/></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
+                loader:({params})=>fetch(`https://sportify-server-mu.vercel.app/equipments/${params.id}`)
             },
             {
                 path:'/login',

@@ -39,7 +39,7 @@ const UpdateEquipment = () => {
             userName,
             email
         }
-        fetch(`http://localhost:5000/equipments/${data._id}`,{
+        fetch(`https://sportify-server-mu.vercel.app/equipments/${data._id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json',
