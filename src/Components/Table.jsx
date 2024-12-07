@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Table = ({equipment,idx}) => {
     const {itemName, photo, category, price, stock , _id} = equipment || {}
-    console.log(equipment)
     return (
         <tr>
             <td>{idx + 1}</td>

@@ -2,7 +2,6 @@ import React from 'react';
 import ProductCard from './ProductCard';
 
 const OurProduct = ({products}) => {
-    console.log(products)
     return (
         <div className='w-10/12 mx-auto py-16'>
             <h2 className='text-4xl md:text-5xl  font-bold text-center'>Featured Products</h2>

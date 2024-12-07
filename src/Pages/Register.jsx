@@ -37,7 +37,6 @@ const Register = () => {
         }
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
                 setUser(result.user)
                 toast.success('your account has been created')
                 updateProfile(auth.currentUser, profile)

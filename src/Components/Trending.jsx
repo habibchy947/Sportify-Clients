@@ -8,7 +8,6 @@ const Trending = () => {
         .then(res => res.json())
         .then(data => setTrend(data))
     },[])
-    console.log(trend)
     return (
         <div className='w-10/12 mx-auto py-10'>
             <h2 className='text-4xl md:text-5xl text-center font-semibold'>Trending Now</h2>

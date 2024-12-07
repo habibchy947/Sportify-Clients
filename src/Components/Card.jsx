@@ -22,7 +22,6 @@ const Card = ({ product ,myEquipment, setMyEquipment}) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your file has been deleted.",

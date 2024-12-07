@@ -37,7 +37,6 @@ const AddEquipment = () => {
             userName,
             email
         }
-        console.log(newEquipment)
         fetch("http://localhost:5000/equipments", {
             method:"POST",
             headers:{
@@ -50,7 +49,6 @@ const AddEquipment = () => {
             e.target.reset()
             setRating(0)
             toast.success('equipment added')
-            console.log(data)
         })
        
     }

@@ -7,7 +7,6 @@ import toast from 'react-hot-toast';
 
 const UpdateEquipment = () => {
     const data = useLoaderData()
-    console.log(data)
     const { user ,theme} = useContext(AuthContext)
     const [rating, setRating] = useState(0)
     const handleRatingChange = (value) => {
@@ -40,7 +39,6 @@ const UpdateEquipment = () => {
             userName,
             email
         }
-        console.log(newEquipment)
         fetch(`http://localhost:5000/equipments/${data._id}`,{
             method:'PUT',
             headers:{

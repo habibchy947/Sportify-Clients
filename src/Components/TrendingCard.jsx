@@ -3,7 +3,6 @@ import { MdOutlineStarOutline, MdOutlineStarPurple500 } from 'react-icons/md';
 import Rating from 'react-rating';
 
 const TrendingCard = ({trender}) => {
-    console.log(trender)
     const { itemName,category, mainRating, image, price, description, stock } = trender || {}
     return (
         <div className="card bg-base-100 shadow-xl rounded-none">
