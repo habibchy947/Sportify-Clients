@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Card from '../Components/Card';
+import { Helmet } from 'react-helmet-async';
 
 const MyEquipment = () => {
     const {user,theme} = useContext(AuthContext)
@@ -9,11 +10,16 @@ const MyEquipment = () => {
         fetch(`https://sportify-server-mu.vercel.app/equipments/email/${user?.email}`)
         .then(res => res.json())
         .then(data => {
-            setMyEquipment(data)
+                setMyEquipment(data)
         })
     },[])
     return (
         <div className={`${theme === 'dark'? 'bg-neutral' : 'bg-slate-50'}`}>
+            <Helmet>
+                <title>
+                    Sportify | My Equipment
+                </title>
+            </Helmet>
             <div className='w-10/12 md:w-9/12 mx-auto py-10'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                 {

@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { IoPersonCircle } from "react-icons/io5";
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import logo from '../assets/shoes.png'
 const Navbar = () => {
     const { user, logOut, handleTheme } = useContext(AuthContext)
     const links =
@@ -39,7 +40,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link className="text-3xl md:text-4xl font-bold"><span className='text-amber-500'>Sport</span>ify</Link>
+                <Link className="text-3xl flex gap-1 md:text-4xl font-bold"><span><img className='h-12 w-12' src={logo} alt="" /></span><span className='text-amber-500 hidden md:block'>Sport</span><span className='hidden md:block'>ify</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -83,7 +84,7 @@ const Navbar = () => {
                     </svg>
                 </label>
                 {
-                    !user ? <span className='text-5xl'><IoPersonCircle /></span> : ''
+                    !user ? <span className='text-4xl md:text-5xl'><IoPersonCircle /></span> : ''
                 }
                 {
                     user && user?.email ?
@@ -100,8 +101,8 @@ const Navbar = () => {
                         </div>
                         :
                         <>
-                            <Link to='/register' className='btn bg-amber-500 text-white'>Register</Link>
-                            <Link to='/login' className='btn bg-amber-700 text-white'>Login</Link>
+                            <Link to='/register' className='btn btn-sm md:btn-md bg-amber-500 text-white'>Register</Link>
+                            <Link to='/login' className='btn btn-sm md:btn-md bg-amber-700 text-white'>Login</Link>
                         </>
                 }
             </div>

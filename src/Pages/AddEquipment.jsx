@@ -3,6 +3,7 @@ import { MdOutlineStarOutline, MdOutlineStarPurple500 } from 'react-icons/md';
 import Rating from 'react-rating';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const AddEquipment = () => {
     const { user } = useContext(AuthContext)
@@ -38,22 +39,27 @@ const AddEquipment = () => {
             email
         }
         fetch("https://sportify-server-mu.vercel.app/equipments", {
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(newEquipment)
+            body: JSON.stringify(newEquipment)
         })
-        .then(res => res.json())
-        .then(data => {
-            e.target.reset()
-            setRating(0)
-            toast.success('equipment added')
-        })
-       
+            .then(res => res.json())
+            .then(data => {
+                e.target.reset()
+                setRating(0)
+                toast.success('equipment added')
+            })
+
     }
     return (
         <>
+            <Helmet>
+                <title>
+                    Sportify | Add Equipment
+                </title>
+            </Helmet>
             <div className='bg-addEquipmentBg bg-center bg-cover bg-no-repeat bg-[#494242cc] bg-blend-overlay'>
                 <div className='w-11/12 md:w-7/12 mx-auto text-center py-28 md:py-32 space-y-4'>
                     <h2 className='text-5xl md:text-6xl text-white leading-tight font-bold'>Add New <span className='text-amber-500'>Sports</span> Equipment</h2>
@@ -148,13 +154,13 @@ const AddEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">User Name</span>
                             </div>
-                            <input name='userName' type="text"  placeholder="write your name" value={user?.displayName} className="input input-bordered w-full" />
+                            <input name='userName' type="text" placeholder="write your name" value={user?.displayName} className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </div>
-                            <input name='email' type="text"  placeholder="write your email" value={user?.email} className="input input-bordered w-full" />
+                            <input name='email' type="text" placeholder="write your email" value={user?.email} className="input input-bordered w-full" />
                         </label>
                     </div>
                     {/* row-7 */}

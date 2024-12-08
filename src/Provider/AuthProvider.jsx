@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/firebase-init';
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
+    const [loadingSpinner,setLoadingSpinner] = useState(true)
     // theme
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
     const handleTheme = (e) => {
@@ -59,7 +60,9 @@ const AuthProvider = ({ children }) => {
         loading,
         setLoading,
         handleTheme,
-        theme
+        theme,
+        loadingSpinner,
+        setLoadingSpinner
     }
     return (
         <AuthContext.Provider value={authInfo}>

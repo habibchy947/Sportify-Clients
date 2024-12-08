@@ -4,10 +4,11 @@ import { AuthContext } from '../Provider/AuthProvider';
 import Rating from 'react-rating';
 import { MdOutlineStarOutline, MdOutlineStarPurple500 } from 'react-icons/md';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateEquipment = () => {
     const data = useLoaderData()
-    const { user ,theme} = useContext(AuthContext)
+    const { user, theme } = useContext(AuthContext)
     const [rating, setRating] = useState(0)
     const handleRatingChange = (value) => {
         setRating(value)
@@ -39,29 +40,34 @@ const UpdateEquipment = () => {
             userName,
             email
         }
-        fetch(`https://sportify-server-mu.vercel.app/equipments/${data._id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json',
+        fetch(`https://sportify-server-mu.vercel.app/equipments/${data._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
             },
-            body:JSON.stringify(newEquipment)
+            body: JSON.stringify(newEquipment)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount){
-                toast.success(`The data of ${itemName} updated successfully`)
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    toast.success(`The data of ${itemName} updated successfully`)
+                }
+            })
 
     }
     return (
         <div>
+            <Helmet>
+                <title>
+                    Sportify | Update
+                </title>
+            </Helmet>
             <div className='bg-UpdateEquipmentBg bg-no-repeat bg-cover bg-center bg-[#494242cc] bg-blend-overlay'>
                 <div className='w-11/12 md:w-7/12 mx-auto text-center py-24 md:py-28 space-y-4'>
                     <h2 className='text-5xl md:text-6xl text-white leading-tight font-bold'>Update Equipment</h2>
                 </div>
             </div>
-            <div className={`${theme === 'dark' ? 'bg-neutral':'bg-slate-50'} my-5 w-10/12 md:w-9/12 mx-auto  shadow-2xl rounded-md p-7 md:px-16 pt-5`}>
+            <div className={`${theme === 'dark' ? 'bg-neutral' : 'bg-slate-50'} my-5 w-10/12 md:w-9/12 mx-auto  shadow-2xl rounded-md p-7 md:px-16 pt-5`}>
                 <form onSubmit={handleUpdateEquipment}>
                     {/* row-1 */}
                     <div className='md:flex gap-5'>
@@ -146,7 +152,7 @@ const UpdateEquipment = () => {
                             <div className="label">
                                 <span className="label-text font-semibold">User Name</span>
                             </div>
-                            <input name='userName' type="text" placeholder="write your name"  value={user?.displayName} className="input input-bordered w-full" />
+                            <input name='userName' type="text" placeholder="write your name" value={user?.displayName} className="input input-bordered w-full" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">

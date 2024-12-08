@@ -5,6 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const [eye, setEye] = useState(false)
@@ -40,6 +41,11 @@ const Login = () => {
     }
     return (
         <div className="bg-loginImg bg-no-repeat bg-cover flex items-center justify-center py-10">
+            <Helmet>
+                <title>
+                    Sportify | Login
+                </title>
+            </Helmet>
             <div className="card bg-base-100 rounded-md w-10/12   max-w-md shrink-0 shadow-2xl">
                 <div className='px-10 pt-5 text-center space-y-4'>
                     <h1 className='text-4xl font-bold'>Login</h1>

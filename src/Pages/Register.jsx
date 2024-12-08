@@ -6,6 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import auth from '../Firebase/firebase-init';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { createUser, setUser, googleSignIn } = useContext(AuthContext)
@@ -54,6 +55,11 @@ const Register = () => {
     }
     return (
         <div className="bg-loginImg bg-no-repeat bg-cover flex items-center justify-center py-10">
+            <Helmet>
+                <title>
+                    Sportify | Register
+                </title>
+            </Helmet>
             <div className="card bg-base-100 rounded-md w-10/12   max-w-md shrink-0 shadow-2xl">
                 <div className='px-10 pt-5 text-center space-y-4'>
                     <h1 className='text-4xl font-bold'>Register</h1>

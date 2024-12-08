@@ -6,12 +6,18 @@ import Categories from '../Components/Categories';
 import Trending from '../Components/Trending';
 import { AuthContext } from '../Provider/AuthProvider';
 import FAQs from '../Components/FAQs';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const products = useLoaderData()
     const {theme} = useContext(AuthContext)
     return (
         <div className=''>
+            <Helmet>
+                <title>
+                    Sportify | Home
+                </title>
+            </Helmet>
             <Banner></Banner>
             <section className='w-10/12 mx-auto'>
                 <Categories></Categories>

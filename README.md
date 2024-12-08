@@ -6,7 +6,7 @@ Welcome to ***Sportify***, the ultimate destination for premium sports equipment
 
 ## Live link
 
-- ## [https://mentor-quest-habib.netlify.app](https://mentor-quest-habib.netlify.app)
+- ## [https://sportify-fe915.web.app](https://sportify-fe915.web.app)
 
 
 ## Tecnology used
