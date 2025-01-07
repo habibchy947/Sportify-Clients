@@ -6,20 +6,21 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
     const { category, itemName, mainRating, photo, price, description, _id } = product || {}
     return (
-        <div className="card bg-base-100 hover:scale-95 transition-transform shadow-xl rounded-none">
-            <figure className="px-0 py-0 p-2">
+        <div className="card hover:scale-95 transition-transform shadow-xl rounded-none">
+            <figure className="px-0 py-0">
                 <img
                     src={photo}
                     alt={itemName}
-                    className="object-cover w-full h-80" />
+                    className="h-44 md:h-52 w-44 md:w-52 px-0 py-0" />
             </figure>
-            <div className="card-body p-4 ">
-                <h2 className="card-title font-semibold text-2xl">{itemName}</h2>
+            <div className="divider"></div>
+            <div className="card-body px-3 pb-1 pt-0">
+                <h2 className="card-title font-semibold text-xl md:text-xl py-0">{itemName}</h2>
                 <div className='flex flex-wrap justify-between items-center'>
-                    <p><span className='text-lg font-semibold'>Price : </span><span>{price}$</span></p>
-                    <p className='flex gap-1 items-center justify-end'> <span className='text-lg font-semibold'>Rating :</span>
+                    <p><span className='text-2xl font-bold text-amber-500'>${price}</span></p>
+                    <p className='flex gap-1 items-center justify-end'>
                         <Rating
-                            className='text-xl'
+                            className='text-lg md:text-xl'
                             initialRating={mainRating}
                             emptySymbol={<MdOutlineStarOutline />}
                             fullSymbol={<MdOutlineStarPurple500 className='text-yellow-400' />}
@@ -28,7 +29,7 @@ const ProductCard = ({ product }) => {
                     </p>
                 </div>
                 <div className="card-actions py-1">
-                    <Link to={`/productDetails/${_id}`}><button className="btn text-white rounded-md  bg-amber-500">View Details</button></Link>
+                    <Link to={`/productDetails/${_id}`}><button className="btn border-none btn-sm md:btn-md text-white rounded-md  bg-amber-500">View Details</button></Link>
                 </div>
             </div>
         </div>

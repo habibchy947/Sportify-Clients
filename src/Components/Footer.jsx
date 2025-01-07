@@ -6,7 +6,7 @@ import { FaTwitter, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='bg-zinc-500 py-12'>
-            <div className='grid grid-cols-1 md:grid-cols-4 w-10/12 mx-auto gap-8 overflow-hidden'>
+            <div className='grid grid-cols-1 md:grid-cols-4 px-5 mx-auto gap-8 overflow-hidden'>
                 <div className='space-y-3'>
                     <Link className="text-5xl font-bold">
                         <span className='text-amber-500'>Sport</span>
@@ -18,19 +18,19 @@ const Footer = () => {
                         tips to help you perform at your best.
                     </p>
                     <div className='flex gap-4'>
-                        <span className='text-white text-xl'><FaFacebook /></span>
-                        <span className='text-white text-xl'><FaTwitter /></span>
-                        <span className='text-white text-xl'><FaInstagram /></span>
-                        <span className='text-white text-xl'><FaYoutube /></span>
+                        <span className='text-white text-xl'><Link to='https://www.facebook.com/prince.jihan.779'><FaFacebook /></Link></span>
+                        <span className='text-white text-xl'><Link to='https://x.com/HAlquaderi34259'><FaTwitter /></Link></span>
+                        <span className='text-white text-xl'><Link to='https://www.instagram.com/chowdhuryjihan30/'><FaInstagram /></Link></span>
+                        <span className='text-white text-xl'><Link to='https://www.youtube.com/watch?v=YXmB1o4AZdY'><FaYoutube /></Link></span>
                     </div>
                 </div>
                 <div>
                     <h2 className='text-lg font-semibold text-amber-500 mb-4'>Quick links</h2>
                     <ul className='text-gray-200'>
-                        <li>Home</li>
-                        <li>Shop</li>
-                        <li>About us</li>
-                        <li>Contact us</li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/allSportsEquipment'>All Equipments</Link></li>
+                        <li><Link to='/about'>About us</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                 </div>
                 <div>

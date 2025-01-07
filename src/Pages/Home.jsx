@@ -19,18 +19,18 @@ const Home = () => {
                     Sportify | Home
                 </title>
             </Helmet>
-            {/* <Banner></Banner> */}
-            <Slider></Slider>
-            <section className='w-10/12 mx-auto'>
+            <Banner></Banner>
+            {/* <Slider></Slider> */}
+            <section className='py-20 mx-auto bg-slate-50 dark:bg-neutral'>
                 <Categories></Categories>
             </section>
-            <section className={`${theme === 'dark' ? 'bg-neutral' :'bg-gray-50'} mt-3`}>
+            <section className='bg-slate-50 dark:bg-neutral'>
                 <OurProduct products={products}></OurProduct>
             </section>
-            <section>
+            <section className='bg-slate-50 dark:bg-neutral'>
                 <FAQs></FAQs>
             </section>
-            <section className={`${theme === 'dark' ? 'bg-neutral' :'bg-slate-100'}`}>
+            <section className="bg-slate-50 dark:bg-neutral">
                 <Trending></Trending>
             </section>
         </div>

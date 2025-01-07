@@ -26,8 +26,8 @@ const Banner = () => {
                 className="mySwiper"
             >
             <SwiperSlide>
-                <div className='bg-bannerImg bg-cover bg-no-repeat bg-[#494242cc] bg-blend-overlay py-24'>
-                    <div className='w-11/12 md:w-7/12 mx-auto text-center'>
+                <div className='bg-bannerImg1 bg-blend-overlay relative bg-gray-700/70 bg-no-repeat bg-center bg-cover md:h-[30rem] lg:h-[28rem] h-[32rem]'>
+                    <div className='w-11/12 md:w-7/12 mx-auto text-center py-24'>
                         <Fade cascade>
                             <h2 className='text-lg text-white'>Game On! Equip Yourself for Victory.</h2>
                             <h2 className='text-4xl md:text-5xl font-semibold text-white leading-tight'>Elevate Every Play with Premium Sports Equipment</h2>
@@ -42,8 +42,8 @@ const Banner = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='bg-bannerImg2 bg-no-repeat bg-cover bg-[#494242cc] bg-blend-overlay py-24'>
-                    <div className='w-11/12 md:w-7/12 mx-auto text-center'>
+                <div className='bg-bannerImg2 bg-blend-overlay relative bg-gray-700/70 bg-no-repeat bg-center bg-cover md:h-[30rem] lg:h-[28rem] h-[32rem]'>
+                    <div className='w-11/12 md:w-7/12 mx-auto text-center py-24'>
                         <Fade cascade>
                             <h2 className='text-lg text-white'>Equip. Perform. Excel.</h2>
                             <h2 className='text-4xl md:text-5xl font-semibold text-white leading-tight'>The Gear You Need, the Performance You Deserve</h2>
@@ -59,8 +59,8 @@ const Banner = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='bg-bannerImg3 bg-no-repeat bg-cover bg-center  bg-[#494242cc] bg-blend-overlay py-24'>
-                    <div className='w-11/12 md:w-7/12 mx-auto text-center'>
+                <div className='bg-bannerImg3 bg-blend-overlay relative bg-gray-700/70 bg-no-repeat bg-center bg-cover md:h-[30rem] lg:h-[28rem] h-[32rem]'>
+                    <div className='w-11/12 md:w-7/12 mx-auto text-center py-24'>
                         <Fade cascade>
                             <h2 className='text-lg text-white'>Unlock Your Full Athletic Potential.</h2>
                             <h2 className='text-4xl md:text-5xl font-semibold text-white leading-tight'>Push Beyond Limits with Premium Equipment</h2>

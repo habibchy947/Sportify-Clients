@@ -2,10 +2,10 @@ import React from 'react';
 import faqs from '../assets/faqs.webp'
 const FAQs = () => {
     return (
-        <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 py-12 gap-10'>
+        <div className='px-5 mx-auto grid grid-cols-1 md:grid-cols-2 pb-20 gap-10'>
             <div className='space-y-2'>
                 <p className='text-amber-500 font-semibold'>Equipments Related Queries</p>
-                <h2 className='text-3xl font-semibold'>Equipments and services</h2>
+                <h2 className='text-4xl font-semibold'>Equipments and services</h2>
                 <div className="collapse collapse-arrow rounded-md">
                     <input type="radio" name="my-accordion-2" defaultChecked />
                     <div className="collapse-title text-xl font-medium text-amber-500">What types of sports equipment do you offer?</div>

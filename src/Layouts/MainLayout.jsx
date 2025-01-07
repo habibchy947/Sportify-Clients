@@ -2,12 +2,10 @@ import React, { useContext } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { Outlet } from 'react-router-dom';
-import { AuthContext } from '../Provider/AuthProvider';
 
 const MainLayout = () => {
-    const {theme} = useContext(AuthContext)
     return (
-        <div className={`${theme === 'dark' ? 'text-white' : 'black'}`}>
+        <div className={`dark:text-white  max-w-screen-2xl mx-auto`}>
             {/* navbar */}
             <header className='shadow-lg py-2 sticky top-0 bg-white dark:bg-neutral z-50'>
                 <Navbar></Navbar>

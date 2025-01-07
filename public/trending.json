@@ -1,6 +1,6 @@
 [
     {
-        "image": "https://i.ibb.co.com/RphWHL8/baseball-Bats.jpg",
+        "image": "https://i.ibb.co.com/jRq79kq/baseball-Bats.png",
         "itemName": "Baseball Bats",
         "category": "Baseball",
         "description": "High-quality baseball bats suitable for professional matches.",
@@ -11,7 +11,7 @@
         "stock": "15"
     },
     {
-        "image": "https://i.ibb.co.com/z5qj0zH/golfBags.jpg",
+        "image": "https://i.ibb.co.com/L8GMMFT/golfBags.png",
         "itemName": "Golf Bags",
         "category": "Golf",
         "description": "High-quality and waterproof professional bags.",
@@ -22,7 +22,7 @@
         "stock": "23"
     },
     {
-        "image": "https://i.ibb.co.com/cQJVG4d/archerybows.jpg",
+        "image": "https://i.ibb.co.com/37SPT2B/archerybows.png",
         "itemName": "Archery bows",
         "category": "Archery",
         "description": "Lightweight bows with superior grip  for durability.",
