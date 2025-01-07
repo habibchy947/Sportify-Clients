@@ -7,6 +7,7 @@ import Trending from '../Components/Trending';
 import { AuthContext } from '../Provider/AuthProvider';
 import FAQs from '../Components/FAQs';
 import { Helmet } from 'react-helmet-async';
+import Slider from '../Components/Slider';
 
 const Home = () => {
     const products = useLoaderData()
@@ -18,7 +19,8 @@ const Home = () => {
                     Sportify | Home
                 </title>
             </Helmet>
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
+            <Slider></Slider>
             <section className='w-10/12 mx-auto'>
                 <Categories></Categories>
             </section>

@@ -20,7 +20,7 @@ const ProductDetails = () => {
             <div className='w-10/12 md:w-9/12 bg-base-100 mx-auto p-5 grid grid-cols-1 md:grid-cols-2 items-center shadow-md'>
                 <div className='flex justify-center'>
                     <Zoom>
-                        <img className='h-80' src={photo} alt="" />
+                        <img className='h-80 object-cover' src={photo} alt="" />
                     </Zoom>
                 </div>
                 <div className='space-y-2'>

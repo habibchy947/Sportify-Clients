@@ -10,14 +10,32 @@ const Navbar = () => {
         <>
             <NavLink to='/' className={({ isActive }) => `px-4  font-medium text-lg ${isActive ? 'text-warning' : ""}`}>Home</NavLink>
             <NavLink to='/allSportsEquipment' className={({ isActive }) => `px-4 font-medium text-lg ${isActive ? 'text-warning' : ""}`}>All sports equipment</NavLink>
-            <NavLink to='/addEquipment' className={({ isActive }) => `px-4 font-medium text-lg ${isActive ? 'text-warning' : ""}`}>Add equipment</NavLink>
-            <NavLink to='/myEquipment' className={({ isActive }) => `px-4 font-medium text-lg ${isActive ? 'text-warning' : ""}`}>My equipment list</NavLink>
+            <NavLink to='/contact' className={({ isActive }) => `px-4 font-medium text-lg ${isActive ? 'text-warning' : ""}`}>Contact</NavLink>
+            <NavLink to='/about' className={({ isActive }) => `px-4 font-medium text-lg ${isActive ? 'text-warning' : ""}`}>About Us</NavLink>
 
         </>
-    
+
     const [toggle, setToggle] = useState(false)
+    const userTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const themeCheck = () => {
+        if (userTheme === "dark" || (!userTheme && systemTheme)) {
+            document.documentElement.classList.add("dark")
+            return
+        }
+    }
+    const themeSwitch = () => {
+        if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark")
+            localStorage.setItem("theme", "light")
+            return
+        }
+        document.documentElement.classList.add("dark")
+        localStorage.setItem("theme", "dark")
+    }
+    themeCheck()
     return (
-        <div className="navbar px-0 w-11/12 md:w-10/12 mx-auto">
+        <div className="navbar px-6 sticky top-0 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,7 +69,7 @@ const Navbar = () => {
                 <label className="grid cursor-pointer place-items-center">
                     <input
                         type="checkbox"
-                        onChange={handleTheme}
+                        onChange={() => themeSwitch()}
                         value="synthwave"
                         className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
                     <svg
@@ -86,19 +104,35 @@ const Navbar = () => {
                 {
                     !user ? <span className='text-4xl md:text-5xl'><IoPersonCircle /></span> : ''
                 }
-                {
-                    user && user?.email ?
-                        <div className='flex gap-2'>
-                            <div data-tooltip-id='tooltipName'><img className='h-12 w-12 rounded-full object-cover' src={user.photoURL} alt={user?.name} /></div>
-                            <span><button onClick={logOut} className='btn bg-neutral text-white'>Logout</button></span>
-                            <ReactTooltip
-                                id="tooltipName"
-                                className='z-20'
-                                place="bottom"
-                                variant="info"
-                                content={user?.displayName}
-                            />
+                {user ?
+                    <div className='flex items-center'>
+                        <button className='py-2 px-3 rounded-md font-semibold bg-neutral dark:bg-slate-200 text-white dark:text-black' onClick={logOut}>LogOut</button>
+                        {/* profile */}
+                        <div className="dropdown dropdown-end z-50">
+                            <div onClick={() => setToggle(!toggle)} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div data-tooltip-id='tooltipName' className="w-10 rounded-full">
+                                    <img
+                                        referrerPolicy='no-referrer'
+                                        alt={user?.displayName}
+                                        src={user && user?.photoURL} />
+                                <ReactTooltip
+                                    id="tooltipName"
+                                    className='z-20'
+                                    place="bottom"
+                                    variant="info"
+                                    content={user?.displayName}
+                                />
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className={`${!toggle && 'hidden'}  menu menu-sm dropdown-content text-black bg-white rounded-md z-[1] mt-2 w-52 p-2 shadow`}>
+                                <li><NavLink to="/addEquipment" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>Add Equipment</NavLink></li>
+                                <li><NavLink to="/myEquipment" className={({ isActive }) => `${isActive ? 'bg-orange-500 text-white' : ""}`}>My Equipment</NavLink></li>
+                            </ul>
                         </div>
+                    </div>
+               
                         :
                         <>
                             <Link to='/register' className='btn btn-sm md:btn-md bg-amber-500 text-white'>Register</Link>

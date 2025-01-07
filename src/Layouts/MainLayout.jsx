@@ -9,7 +9,7 @@ const MainLayout = () => {
     return (
         <div className={`${theme === 'dark' ? 'text-white' : 'black'}`}>
             {/* navbar */}
-            <header className='shadow-lg py-2'>
+            <header className='shadow-lg py-2 sticky top-0 bg-white dark:bg-neutral z-50'>
                 <Navbar></Navbar>
             </header>
             {/* dynamic content */}
