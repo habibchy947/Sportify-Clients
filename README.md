@@ -12,18 +12,19 @@ Welcome to ***Sportify***, the ultimate destination for premium sports equipment
 
 ## Tecnology used
 
-- **JSX(Javascrift XML)** 
+- **React** 
 - **MongoDb** 
-- **Node.js ** 
+- **Node.js** 
 - **Express.js**
-- 
+  
 ## Key Features
 
-- **Add Equipment:** Administrators can easily add new sports equipment to the inventory.Include details such as the item name, category, price, rating, description, customization options, processing time, stock availability, and product photos.
+- **User Authentication:** Secure login and registration with Firebase integration.
 
 - **Responsive UI:** Fully responsive design that adapts seamlessly accross devices , ensuring smooth experience in desktop, laptop, tablets and smartphones.
 
-- **Update Equipment:** Update existing product details effortlessly.Modify attributes like price, stock levels, descriptions, or customization options to keep inventory accurate and up-to-date.
+- **Dynamic Product Management:**
+  - Add, update, and delete sports equipment. 
 - **Sorting Equipments:** User can sort equipments as their wishes.
 - **Customizable Product options:** Users can select customization features (e.g., size, color, string tension, grip style).
 
