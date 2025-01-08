@@ -8,6 +8,7 @@ Welcome to ***Sportify***, the ultimate destination for premium sports equipment
 
 - ## [https://sportify-fe915.web.app](https://sportify-fe915.web.app)
 
+![sportify-readme-1](https://github.com/user-attachments/assets/8d5cdbb9-28e1-490b-ae04-352cb09f9a98)
 
 ## Tecnology used
 
