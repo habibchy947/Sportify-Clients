@@ -14,20 +14,9 @@ Welcome to ***Sportify***, the ultimate destination for premium sports equipment
 
 - **JSX(Javascrift XML)** 
 - **MongoDb** 
-- **Component's**
-- **Props(Properties)**
-- **State**
-- **UseEffect** 
-- **Context API** 
-- **React router** 
-- **React npm libraries** 
-- **Hooks** 
-- **Error boundaries** 
-- **Higher order component's** 
-
-
-
-
+- **Node.js ** 
+- **Express.js**
+- 
 ## Key Features
 
 - **Add Equipment:** Administrators can easily add new sports equipment to the inventory.Include details such as the item name, category, price, rating, description, customization options, processing time, stock availability, and product photos.
